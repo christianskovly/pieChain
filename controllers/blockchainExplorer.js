@@ -1,4 +1,4 @@
-const Blockchain = require("../blockchain");
+const Blockchain = require("../config/blockchain");
 const bitcoin = new Blockchain();
 const handleError = require("../config/Errors");
 const logValue = require("../config/Test");
@@ -47,7 +47,7 @@ module.exports = {
   },
   getBlockExplorer: async function (req, res) {
     try {
-      res.sendFile("../block-explorer/index.html", { root: __dirname });
+      res.render("../block-explorer/index.ejs", { root: __dirname });
     } catch (err) {
       handleError(err);
     }

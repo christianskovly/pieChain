@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const blockchainControllers = require("../controllers/blockchain");
 
+router.get("/", blockchainControllers.getHome);
+
 //get entire blockchain
 router.get("/blockchain", blockchainControllers.getBlockchain);
 
