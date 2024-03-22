@@ -1,5 +1,5 @@
 const rp = require("request-promise");
-const Blockchain = require("../blockchain");
+const Blockchain = require("../config/blockchain");
 const bitcoin = new Blockchain();
 const handleError = require("../config/Errors");
 const logValue = require("../config/Test");
@@ -49,6 +49,19 @@ module.exports = {
           logValue(data);
           res.json({ note: "New node registered with network successfully." });
         });
+    } catch (err) {
+      handleError(err);
+    }
+  },
+  registerNode: async function (req, res) {
+    try {
+      const newNodeUrl = req.body.newNodeUrl;
+      const nodeNotAlreadyPresent =
+        bitcoin.networkNodes.indexOf(newNodeUrl) == -1;
+      const notCurrentNode = bitcoin.currentNodeUrl !== newNodeUrl;
+      if (nodeNotAlreadyPresent && notCurrentNode)
+        bitcoin.networkNodes.push(newNodeUrl);
+      res.json({ note: "New node registered successfully." });
     } catch (err) {
       handleError(err);
     }

@@ -1,5 +1,5 @@
 const rp = require("request-promise");
-const Blockchain = require("../blockchain");
+const Blockchain = require("../config/blockchain");
 const bitcoin = new Blockchain();
 const handleError = require("../config/Errors");
 const logValue = require("../config/Test");
@@ -56,6 +56,13 @@ module.exports = {
         logValue(data);
         res.json({ note: "Transaction created and broadcast successfully." });
       });
+    } catch (err) {
+      handleError(err);
+    }
+  },
+  getHome: async function (req, res) {
+    try {
+      res.render("../block-explorer/home.ejs", { root: __dirname });
     } catch (err) {
       handleError(err);
     }

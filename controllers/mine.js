@@ -1,5 +1,5 @@
 const rp = require("request-promise");
-const Blockchain = require("../blockchain");
+const Blockchain = require("../config/blockchain");
 const uuid = require("uuid").v1;
 const nodeAddress = uuid().split("-").join("");
 const bitcoin = new Blockchain();

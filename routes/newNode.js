@@ -15,6 +15,8 @@ router.post(
 //  add CONSENSUS code to registration
 //      so that new node has current blockchain
 
+app.post("/register-node", newNodeControllers.registernode);
+
 router.post("/register-nodes-bulk", newNodeControllers.bulkRegisterNodes);
 
 // CONSENSUS -  Check with all other nodes to find the longest blockchain legnth. If the length is
