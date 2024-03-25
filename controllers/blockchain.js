@@ -62,7 +62,7 @@ module.exports = {
   },
   getHome: async function (req, res) {
     try {
-      res.render("../block-explorer/home.ejs", { root: __dirname });
+      res.render("../views/home.ejs");
     } catch (err) {
       handleError(err);
     }

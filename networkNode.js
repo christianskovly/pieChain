@@ -6,6 +6,8 @@ const blockchainRoutes = require("./routes/blockchain");
 const mineRoutes = require("./routes/mine");
 const newNodeRoutes = require("./routes/newNode");
 const blockchainExplorerRoutes = require("./routes/blockchainExplorer");
+const authRoutes = require("./routes/auth");
+
 const cors = require("cors");
 
 app.use(express.urlencoded({ extended: true }));
@@ -13,10 +15,11 @@ app.use(express.json());
 app.use(cors());
 
 app.set("view engine", "ejs");
-app.set(express.static("public"));
+app.use(express.static('public'));
 app.set(express.static("block-explorer"));
 
 app.use("/", blockchainRoutes);
+app.use("/auth", authRoutes);
 app.use("/mine", mineRoutes);
 app.use("/newNode", newNodeRoutes);
 app.use("/blockchainExplorer", blockchainExplorerRoutes);
