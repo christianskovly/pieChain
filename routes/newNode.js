@@ -15,7 +15,7 @@ router.post(
 //  add CONSENSUS code to registration
 //      so that new node has current blockchain
 
-router.post("/register-node", newNodeControllers.registernode);
+router.post("/register-node", newNodeControllers.registerNode);
 
 router.post("/register-nodes-bulk", newNodeControllers.bulkRegisterNodes);
 
