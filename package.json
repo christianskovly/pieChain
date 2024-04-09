@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node networkNode.js",
+    "dev": "node networkNode.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "node_1": "nodemon --watch dev -e js dev/networkNode.js 3001 http://localhost:3001",
     "node_2": "nodemon --watch dev -e js dev/networkNode.js 3002 http://localhost:3002",
@@ -21,14 +22,15 @@
   "author": "3BeetMassacre",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "body-parser": "^1.19.1",
     "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
     "ejs": "^3.1.9",
     "express": "^4.17.2",
+    "method-override": "^3.0.0",
+    "mongoose": "^8.3.0",
     "nodemon": "^2.0.15",
-    "request": "^2.88.2",
-    "request-promise": "^4.2.6",
-    "sha256": "^0.2.0",
     "uuid": "^8.3.2"
   }
 }
