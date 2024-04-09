@@ -15,6 +15,6 @@ router.get(
 router.get("/address/:address", blockchainExplorerControllers.getAddress);
 
 // block explorer
-router.get("/block-explorer", blockchainExplorerControllers.getBlockExplorer);
+router.get("/", blockchainExplorerControllers.getBlockExplorer);
 
 module.exports = router;

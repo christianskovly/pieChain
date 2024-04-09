@@ -47,7 +47,7 @@ module.exports = {
   },
   getBlockExplorer: async function (req, res) {
     try {
-      res.render("../block-explorer/index.ejs", { root: __dirname });
+      res.render("../views/dashboard.ejs");
     } catch (err) {
       handleError(err);
     }

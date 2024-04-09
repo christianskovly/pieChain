@@ -8,7 +8,7 @@ module.exports = {
   //Get entire blockchain
   getBlockchain: async function (req, res) {
     try {
-      const blockchain = await res.send(bitcoin);
+      const blockchain = await res.status(bitcoin);
       logValue(blockchain);
     } catch (err) {
       handleError(err);
@@ -62,7 +62,7 @@ module.exports = {
   },
   getHome: async function (req, res) {
     try {
-      res.render("../block-explorer/home.ejs", { root: __dirname });
+      res.render("../views/home.ejs");
     } catch (err) {
       handleError(err);
     }
