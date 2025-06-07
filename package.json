@@ -1,7 +1,7 @@
 {
   "name": "blockchain",
   "version": "1.0.0",
-  "description": "LowFi Proof or Work Blockchain for low powered SBC such as Rapsi and Arduino",
+  "description": "LowFi Proof of Work Blockchain for low powered SBC such as Rapsi and Arduino",
   "main": "index.js",
   "scripts": {
     "start": "node networkNode.js",
